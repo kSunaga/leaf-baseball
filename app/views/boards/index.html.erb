@@ -3,9 +3,17 @@
 <div id="top-page">
 <% @boards.each do |b| %>
   <div class="board">
-    <p class="board-title">
-      <%= b.place %>
-    </p>
+    <div class="content">
+      <div class="header">
+        <ul>
+          <li>日時</li>
+          <li>場所</li>
+          <li>チーム名</li>
+          <li>レベル</li>
+          <li class="pull-right"><%= link_to '詳細', board_path(b) %></li>
+        </ul>
+      </div>
+    </div>
   </div>
 <% end %>
 </div>

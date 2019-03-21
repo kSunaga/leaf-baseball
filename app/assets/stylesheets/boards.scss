@@ -3,8 +3,17 @@
   .board {
     border: 1px solid lightgray;
     height: 75px;
-    width: 50%;
-    margin: 0.5% auto;
+    width: 70%;
+    margin: 1% auto;
     line-height: 75px;
+    .content {
+      .header {
+        height: 50%;
+        > ul > li {
+          display: inline;
+          height: 50%;
+        }
+      }
+    }
   }
 }
