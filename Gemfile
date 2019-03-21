@@ -23,6 +23,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'seed-fu'
 end
 
 group :development do
