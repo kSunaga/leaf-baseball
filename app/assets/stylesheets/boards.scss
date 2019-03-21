@@ -1,3 +1,10 @@
-// Place all the styles related to the Boards controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#top-page {
+  margin-top: 5%;
+  .board {
+    border: 1px solid lightgray;
+    height: 75px;
+    width: 50%;
+    margin: 0.5% auto;
+    line-height: 75px;
+  }
+}

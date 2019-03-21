@@ -1,2 +1,11 @@
-<h1>Boards#index</h1>
-<p>Find me in app/views/boards/index.html.erb</p>
+<h1>募集一覧</h1>
+
+<div id="top-page">
+<% @boards.each do |b| %>
+  <div class="board">
+    <p class="board-title">
+      <%= b.place %>
+    </p>
+  </div>
+<% end %>
+</div>

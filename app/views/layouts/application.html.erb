@@ -20,8 +20,22 @@
           </button>
           <a class="navbar-brand" href="#">Leaf Baseball</a>
         </div>
+        <div>
+          <p class="navbar-text navbar-right">ログイン</p>
+          <%= link_to '新規作成', new_board_path, { class: 'navbar-text navbar-right' } %>
+        </div>
       </div>
     </nav>
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="col-xs-2">
+        <ul class="nav nav-pills nav-stacked">
+          <li class="active"><a href="#">対戦相手募集</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-8">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
+
