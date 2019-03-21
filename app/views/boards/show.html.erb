@@ -22,4 +22,28 @@
       <p><%= @board.content %></p>
     </div>
   </div>
+  <div class="edit">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#edit-modal">編集</button>
+  </div>
+</div>
+
+<div class="modal fade" id="edit-modal" tabindex="1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+        <h4>編集</h4>
+      </div>
+      <%= form_with url: board_boards_edit_authorization_index_path(@board), local: true do |f| %>
+      <div class="modal-body">
+        <p>編集パスワードを入力してください。</p>
+        <%= f.password_field :password %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+        <%= f.submit '送信'%>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
