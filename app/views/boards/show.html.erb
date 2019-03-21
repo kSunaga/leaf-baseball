@@ -1,2 +1,25 @@
-<h1>Boards#show</h1>
-<p>Find me in app/views/boards/show.html.erb</p>
+<h1>募集詳細</h1>
+<div id="board-show">
+  <div class="board">
+    <div>
+      <p class="bold">担当者</p>
+      <p><%= @board.name %></p>
+    </div>
+    <div>
+      <p class="bold">場所</p>
+      <p><%= @board.place %></p>
+    </div>
+    <div>
+      <p class="bold">日時</p>
+      <p><%= @board.game_date %></p>
+    </div>
+    <div>
+      <p class="bold">レベル</p>
+      <p><%= @board.level %></p>
+    </div>
+    <div>
+      <p class="bold">詳細</p>
+      <p><%= @board.content %></p>
+    </div>
+  </div>
+</div>

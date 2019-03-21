@@ -11,9 +11,23 @@
         height: 50%;
         > ul > li {
           display: inline;
-          height: 50%;
         }
       }
+    }
+  }
+}
+
+#board-show {
+  margin-top: 5%;
+  .bold {
+    font-weight: bold;
+    width: 10%;
+  }
+  .board {
+    border: 1px solid lightgray;
+    padding: 5%;
+    p {
+      display: inline-block;
     }
   }
 }
