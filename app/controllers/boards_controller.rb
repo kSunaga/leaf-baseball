@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :set_params, only: %i(show edit update)
+  before_action :set_params, only: %i(show edit update destroy)
 
   def index
     @boards = Board.all
@@ -34,6 +34,8 @@ class BoardsController < ApplicationController
   end
 
   def destroy
+     @board.destroy
+     redirect_to boards_path
   end
 
   private
