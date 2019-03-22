@@ -1,4 +1,3 @@
 <%= form_with model: @board, local: true do |f| %>
-  <%= render partial: 'boards/form', locals: {f:f}  %>
-  <%= link_to '削除', board_path(@board), { class: 'btn btn-primary', method: :delete, data: {confirm: '本当に削除しますか？'} } %>
+  <%= render partial: 'boards/form', locals: {f:f, type: 'edit'}  %>
 <% end %>

@@ -7,6 +7,7 @@ class BoardsEditAuthorizationController < ApplicationController
     if board.present?
       render 'boards/edit'
     else
+      flash.now[:error_message] = "パスワードが間違っています。"
       render 'boards/show'
     end
   end

@@ -10,7 +10,10 @@ class BoardsController < ApplicationController
   end
 
   def create
-    board = Board.new(boards_params)
+    if Board.is_password_valid(params[:password], params[:cofirm_password])
+      board = Board.new(boards_params)
+    end
+
     if board.save!
       flash[:message] = "成功しました。"
     else
