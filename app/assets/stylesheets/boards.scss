@@ -3,8 +3,31 @@
   .board {
     border: 1px solid lightgray;
     height: 75px;
-    width: 50%;
-    margin: 0.5% auto;
+    width: 70%;
+    margin: 1% auto;
     line-height: 75px;
+    .content {
+      .header {
+        height: 50%;
+        > ul > li {
+          display: inline;
+        }
+      }
+    }
+  }
+}
+
+#board-show {
+  margin-top: 5%;
+  .bold {
+    font-weight: bold;
+    width: 10%;
+  }
+  .board {
+    border: 1px solid lightgray;
+    padding: 5%;
+    p {
+      display: inline-block;
+    }
   }
 }

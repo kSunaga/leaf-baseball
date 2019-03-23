@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :set_params, only: %i(show edit update)
+  before_action :set_params, only: %i(show edit update destroy)
 
   def index
     @boards = Board.all
@@ -10,7 +10,10 @@ class BoardsController < ApplicationController
   end
 
   def create
-    board = Board.new(boards_params)
+    if Board.is_password_valid(params[:password], params[:cofirm_password])
+      board = Board.new(boards_params)
+    end
+
     if board.save!
       flash[:message] = "成功しました。"
     else
@@ -26,9 +29,16 @@ class BoardsController < ApplicationController
   end
 
   def update
+    if @board.update(boards_params)
+      redirect_to boards_path
+    else
+      render :edit
+    end
   end
 
   def destroy
+     @board.destroy
+     redirect_to boards_path
   end
 
   private

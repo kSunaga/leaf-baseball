@@ -1,2 +1,91 @@
-<h1>Boards#show</h1>
-<p>Find me in app/views/boards/show.html.erb</p>
+<h1>募集詳細</h1>
+<div class="message">
+  <% if flash[:error_message] %>
+    <%= flash[:error_message] %>
+  <% end %>
+</div>
+<div id="board-show">
+  <div class="board">
+    <div>
+      <p class="bold">担当者</p>
+      <p><%= @board.name %></p>
+    </div>
+    <div>
+      <p class="bold">場所</p>
+      <p><%= @board.place %></p>
+    </div>
+    <div>
+      <p class="bold">日時</p>
+      <p><%= @board.game_date %></p>
+    </div>
+    <div>
+      <p class="bold">レベル</p>
+      <p><%= @board.level %></p>
+    </div>
+    <div>
+      <p class="bold">詳細</p>
+      <p><%= @board.content %></p>
+    </div>
+  </div>
+  <div class="edit">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#edit-modal">編集</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#join-modal">参加を申し込む</button>
+  </div>
+</div>
+
+<div class="modal fade" id="edit-modal" tabindex="1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+      </div>
+      <%= form_with url: board_boards_edit_authorization_index_path(@board), local: true do |f| %>
+      <div class="modal-body">
+        <p>編集パスワードを入力してください。</p>
+        <%= f.password_field :password %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+        <%= f.submit '送信', class: "btn btn-primary"%>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="join-modal" tabindex="1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+      </div>
+        <div class="modal-body">
+          <p>ログインユーザーとして参加を申し込みますか？</p>
+          <p class="comment">ログインするとフォームを入力する手間が省けるよ！</p>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#form-modal" data-dismiss="modal">いいえ</button>
+          <button class="btn btn-primary">はい</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="form-modal" tabindex="1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+      </div>
+      <div class="modal-body">
+        <p>参加申し込み</p>
+        <p class="comment">ログインするとフォームを入力する手間が省けるよ！</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">申し込む</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
+</div>

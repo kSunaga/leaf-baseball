@@ -1,0 +1,37 @@
+<div class="form">
+  <ul>
+    <li class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </li>
+    <li class="form-group">
+      <%= f.label :place %>
+      <%= f.text_field :place %>
+    </li>
+    <li class="form-group">
+      <%= f.label :level %>
+      <%= f.text_field :level %>
+    </li>
+    <li class="form-group">
+      <%= f.label :game_date %>
+      <%= f.text_field :game_date %>
+    </li>
+    <li class="form-group">
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+    </li>
+    <li class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </li>
+    <li class="form-group">
+      <%= f.label '確認用password' %>
+      <%= f.password_field :confirm_password %>
+    </li>
+    <span><%= f.submit '作成', {class: 'btn btn-primary'} %>
+      <% if type == 'edit' %>
+      <span><%= link_to '削除', board_path(@board), {class: 'btn btn-primary', method: :delete, data: {confirm: '本当に削除しますか？'}} %></span>
+    <% end %>
+    </span>
+  </ul>
+</div>
