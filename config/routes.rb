@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :boards do
     resources :boards_edit_authorization, only: %i(create)
   end
+  resources :offers, only: %i(new create)
 end
