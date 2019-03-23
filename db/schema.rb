@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_21_055622) do
+ActiveRecord::Schema.define(version: 2019_03_23_140250) do
 
   create_table "boards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -23,4 +23,15 @@ ActiveRecord::Schema.define(version: 2019_03_21_055622) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "offers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "content"
+    t.bigint "board_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["board_id"], name: "index_offers_on_board_id"
+  end
+
+  add_foreign_key "offers", "boards"
 end
