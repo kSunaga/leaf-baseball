@@ -30,9 +30,7 @@
   <div class="edit">
     <%= link_to "戻る", :back, class: 'btn btn-primary' %>
     <button class="btn btn-primary" data-toggle="modal" data-target="#edit-modal">編集</button>
-    <% if !current_user.boards.find(@board.id).present? %>
     <button class="btn btn-primary" data-toggle="modal" data-target="#join-modal">参加を申し込む</button>
-    <% end %>
   </div>
 </div>
 
