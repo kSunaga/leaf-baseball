@@ -42,8 +42,8 @@
       <% if user_signed_in? %>
         <div class="col-xs-2">
           <p><%= current_user.name %>さんでログインしています。</p>
-          <%= link_to "アカウント設定", edit_user_registration_path, { class: "btn btn-default setting-button" } %>
-          <button class="btn btn-default setting-button">テンプレート設定</button>
+          <%= link_to 'アカウント設定', edit_user_registration_path, { class: "btn btn-default setting-button" } %>
+          <%= link_to 'テンプレート設定', templates_path, { class: "btn btn-default setting-button" } %>
         </div>
       <% end %>
     </div>

@@ -1,0 +1,28 @@
+<div class="form">
+  <ul>
+    <li class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, {class: 'form-control'} %>
+    </li>
+    <li class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, {class: 'form-control'} %>
+    </li>
+    <li class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, {class: 'form-control'} %>
+    </li>
+    <li class="form-group">
+      <%= f.label :content %>
+      <%= f.text_field :content, {class: 'form-control'} %>
+    </li>
+    <%= link_to '戻る', :back, class: 'btn btn-primary' %>
+      <% if type == 'edit' %>
+        <span><%= f.submit '更新', {class: 'btn btn-primary'} %>
+          <span><%= link_to '削除', template_path(@template), {class: 'btn btn-primary', method: :delete, data: {confirm: '本当に削除しますか？'}} %></span>
+        </span>
+      <% else %>
+        <span><%= f.submit '作成', {class: 'btn btn-primary'} %>
+      <% end %>
+  </ul>
+</div>
