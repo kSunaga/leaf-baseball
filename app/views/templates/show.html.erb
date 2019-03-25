@@ -1,0 +1,16 @@
+<h1>テンプレート詳細画面</h1>
+<div>
+  <div>
+    <p class="bold">名前</p>
+    　<p><%= @template.name %></p>
+  </div>
+  <div>
+    <p class="bold">メールアドレス</p>
+    <p><%= @template.email %></p>
+  </div>
+  <div>
+    <p class="bold">内容</p>
+    <p><%= @template.content %></p>
+  </div>
+</div>
+<%= link_to '編集', edit_template_path(@template), { class: 'btn btn-primary' } %>

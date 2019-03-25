@@ -42,11 +42,16 @@
       <% if user_signed_in? %>
         <div class="col-xs-2">
           <p><%= current_user.name %>さんでログインしています。</p>
-          <%= link_to "アカウント設定", edit_user_registration_path, { class: "btn btn-default setting-button" } %>
-          <button class="btn btn-default setting-button">テンプレート設定</button>
+          <button class="btn btn-default setting-button" id="account-main">アカウント設定</button>
+          <div class="other" style="display: none">
+            <%= link_to 'アカウント編集', edit_user_registration_path, { class: "btn btn-primary setting-button", style: 'width: 90%; float: right;' } %>
+          </div>
+          <button class="btn btn-default setting-button" id="template-main">テンプレート設定</button>
+          <div class="template-menu" style="display: none">
+            <%= link_to 'テンプレート一覧', templates_path, { class: "btn btn-primary setting-button", style: 'width: 90%; float: right;' } %>
+          </div>
         </div>
       <% end %>
     </div>
   </body>
 </html>
-

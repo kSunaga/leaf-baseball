@@ -5,6 +5,8 @@ Board.seed do |s|
   s.game_date = '2019-01-21'
   s.level = 2
   s.content = "相手募集"
+  s.password = 1234
+  s.user = User.find(1)
 end
 
 Board.seed do |s|
@@ -14,6 +16,8 @@ Board.seed do |s|
   s.game_date = '2019-01-23'
   s.level = 3
   s.content = "相手募集"
+  s.password = 1234
+  s.user = User.find(1)
 end
 
 Board.seed do |s|
@@ -23,6 +27,8 @@ Board.seed do |s|
   s.game_date = '2019-01-22'
   s.level = 5
   s.content = "相手募集"
+  s.password = 1234
+  s.user = User.find(2)
 end
 
 Board.seed do |s|
@@ -32,6 +38,8 @@ Board.seed do |s|
   s.game_date = '2016-01-21'
   s.level = 6
   s.content = "相手募集"
+  s.password = 1234
+  s.user = User.find(2)
 end
 
 Board.seed do |s|
@@ -41,6 +49,8 @@ Board.seed do |s|
   s.game_date = '2012-01-21'
   s.level = 9
   s.content = "相手募集"
+  s.password = 1234
+  s.user = User.find(3)
 end
 
 Board.seed do |s|
@@ -50,5 +60,7 @@ Board.seed do |s|
   s.game_date = '2021-01-21'
   s.level = 11
   s.content = "相手募集"
+  s.password = 1234
+  s.user = User.find(3)
 end
 
