@@ -1,5 +1,5 @@
 class TemplatesController < ApplicationController
-  before_action :set_template, only: %i(show edit destroy)
+  before_action :set_template, only: %i(show edit update destroy)
 
   def index
     @templates = current_user.templates.all
@@ -26,10 +26,9 @@ class TemplatesController < ApplicationController
   end
 
   def update
-    template = current_user.templates.build(set_params)
 
-    if template.save!
-      redirect_to template_path
+    if @template.update(set_params)
+      redirect_to templates_path
     else
       render :new
     end
