@@ -77,11 +77,12 @@
       </div>
       <%= form_with url: new_board_offer_path(@board), local: true, method: :get do |f| %>
       <div class="modal-body">
+        <p>テンプレートを選んでください。</p>
         <%= collection_select(:template, :id, current_user.templates.all, :id, :title ) %>
       </div>
       <div class="modal-footer">
-        <%= f.submit '適応する', { class: 'btn btn-primary' }%>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#form-modal" data-dismiss="modal">テンプレートを使用しない</button>
+        <%= f.submit '適用する', { class: 'btn btn-primary' }%>
+        <%= link_to 'テンプレートを使用しない', new_board_offer_path(@board), class: 'btn btn-primary' %>
       </div>
       <% end %>
     </div>
