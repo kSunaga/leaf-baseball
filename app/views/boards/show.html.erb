@@ -15,8 +15,12 @@
       <p><%= @board.place %></p>
     </div>
     <div>
-      <p class="bold">日時</p>
-      <p><%= @board.format_date %></p>
+      <p class="bold">試合開始日時</p>
+      <p><%= @board.format_start_date %></p>
+    </div>
+    <div>
+      <p class="bold">試合終了日時</p>
+      <p><%= @board.format_end_date %></p>
     </div>
     <div>
       <p class="bold">レベル</p>

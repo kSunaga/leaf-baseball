@@ -2,15 +2,15 @@
 
 <div id="top-page">
   <% @boards.each do |b| %>
-    <%= link_to board_path(b) do %>
-      <div class="board">
+    <div class="board">
+      <%= link_to board_path(b) do %>
         <div class="content">
           <div class="item">
             <div class="head">
-              <span>日時</span>
+              <span>試合開始日時</span>
             </div>
             <div class="data">
-              <span><%= b.format_date %></span>
+              <span><%= b.format_start_date %></span>
             </div>
           </div>
           <div class="item">
@@ -30,7 +30,7 @@
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   <% end %>
 </div>
