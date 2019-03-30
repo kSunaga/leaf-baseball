@@ -36,7 +36,7 @@
           <li class="active"><%= link_to '対戦相手募集', boards_path %></li>
         </ul>
       </div>
-      <div class="col-xs-8">
+      <div id="yield" class="col-xs-8">
         <%= yield %>
       </div>
       <% if user_signed_in? %>

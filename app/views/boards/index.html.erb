@@ -1,19 +1,36 @@
 <h1>募集一覧</h1>
 
 <div id="top-page">
-<% @boards.each do |b| %>
-  <div class="board">
-    <div class="content">
-      <div class="header">
-        <ul>
-          <li>日時</li>
-          <li>場所</li>
-          <li>チーム名</li>
-          <li>レベル</li>
-          <li class="pull-right"><%= link_to '詳細', board_path(b) %></li>
-        </ul>
+  <% @boards.each do |b| %>
+    <%= link_to board_path(b) do %>
+      <div class="board">
+        <div class="content">
+          <div class="item">
+            <div class="head">
+              <span>日時</span>
+            </div>
+            <div class="data">
+              <span><%= b.game_date %></span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="head">
+              <span>レベル</span>
+            </div>
+            <div class="data">
+              <span><%= b.level %></span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="head">
+              <span>担当者</span>
+            </div>
+            <div class="data">
+              <span><%= b.name %></span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-<% end %>
+    <% end %>
+  <% end %>
 </div>
