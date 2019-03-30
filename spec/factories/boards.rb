@@ -1,9 +1,13 @@
-FactoryBot.define do
-  factory :board do
-    name { "MyString" }
-    place { "MyString" }
-    game_date { "2019-03-20" }
-    level { 1 }
-    content { "MyText" }
+5.times do |i|
+  FactoryBot.define do
+    factory :board do
+      name { Faker::Name.name }
+      place { "第#{i}球場"}
+      game_date { Faker::Date.between(2.year.ago, Date.today) }
+      level { (1..5).to_a.sample }
+      content { "test test tetetetete" }
+      password { 1234 }
+      user
+    end
   end
 end

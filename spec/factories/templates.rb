@@ -1,8 +1,10 @@
-FactoryBot.define do
-  factory :template do
-    name { "MyString" }
-    email { "MyString" }
-    content { "MyText" }
-    user { nil }
+5.times do |i|
+  FactoryBot.define do
+    factory :template do
+      name {Faker::Name.name}
+      email {Faker::Internet.email}
+      content {"template#{i}"}
+      user
+    end
   end
 end
