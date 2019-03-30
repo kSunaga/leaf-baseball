@@ -1,9 +1,8 @@
 FactoryBot.define do
   factory :offer do
-    name { "MyString" }
-    email { "MyString" }
-    content { "MyText" }
-    board { nil }
-    user { nil }
+    name {Faker::Name.name}
+    email {Faker::Internet.email}
+    content {"content12"}
+    board
   end
 end

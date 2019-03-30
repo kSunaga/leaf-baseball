@@ -1,8 +1,9 @@
 FactoryBot.define do
   factory :template do
-    name { "MyString" }
-    email { "MyString" }
-    content { "MyText" }
-    user { nil }
+    name {Faker::Name.name}
+    email {Faker::Internet.email}
+    content {"template#{i}"}
+    user
   end
 end
+
