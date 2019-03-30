@@ -13,8 +13,12 @@
       <%= f.text_field :level %>
     </li>
     <li class="form-group">
-      <%= f.label :game_date %>
-      <%= f.text_field :game_date %>
+      <%= f.label :game_start_date %>
+      <%= f.datetime_select :game_start_date, use_month_numbers: true, start_year: Time.now.year, end_year: Time.now.year + 1, minute_step: 15 %>
+    </li>
+    <li class="form-group">
+      <%= f.label :game_end_date %>
+      <%= f.datetime_select :game_end_date, use_month_numbers: true, start_year: Time.now.year, end_year: Time.now.year + 1, minute_step: 15 %>
     </li>
     <li class="form-group">
       <%= f.label :content %>
