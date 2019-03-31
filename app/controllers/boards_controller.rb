@@ -2,7 +2,8 @@ class BoardsController < ApplicationController
   before_action :set_params, only: %i(show edit update destroy)
 
   def index
-    @boards = Board.all
+    @q = Board.ransack(params[:q])
+    @result = @q.result(distinct: true)
   end
 
   def new
