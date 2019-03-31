@@ -1,0 +1,12 @@
+<h1>レベルとは</h1>
+<div>
+  <% @levels.each do |l| %>
+    <div class="level">
+      <div>
+        <span>レベル<%= l.number %></span>
+        <span>レベル<%= l.title %></span>
+      </div>
+      <p>説明:<%= l.description %></p>
+    </div>
+  <% end %>
+</div>

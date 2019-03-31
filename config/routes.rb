@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :offers, only: %i(new create)
   end
   resources :templates
+  resources :levels, only: %i(index)
 end
