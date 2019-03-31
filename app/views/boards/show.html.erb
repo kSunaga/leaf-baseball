@@ -34,7 +34,11 @@
   <div class="edit">
     <%= link_to "戻る", :back, class: 'btn btn-primary' %>
     <button class="btn btn-primary" data-toggle="modal" data-target="#edit-modal">編集</button>
-    <button class="btn btn-primary" data-toggle="modal" data-target="#join-modal">参加を申し込む</button>
+    <% if user_signed_in? %>
+      <button class="btn btn-primary" data-toggle="modal" data-target="#login-modal">参加を申し込</button>
+    <% else %>
+      <%= link_to '参加を申し込む', new_board_offer_path(@board), class: 'btn btn-primary' %>
+    <% end %>
   </div>
 </div>
 
@@ -57,38 +61,23 @@
   </div>
 </div>
 
-<div class="modal fade" id="join-modal" tabindex="1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
-      </div>
-      <div class="modal-body">
-        <p>ログインユーザーとして参加を申し込みますか？</p>
-        <p class="comment">ログインするとフォームを入力する手間が省けるよ！</p>
-        <%= link_to 'いいえ', new_board_offer_path(@board), class: 'btn btn-primary' %>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#select-template" data-dismiss="modal">はい</button>
+<% if user_signed_in? %>
+  <div class="modal fade" id="edit-modal" tabindex="1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+        </div>
+        <%= form_with url: board_boards_edit_authorization_index_path(@board), local: true do |f| %>
+          <div class="modal-body">
+            <p>編集パスワードを入力してください。</p>
+            <%= f.password_field :password %>
+          </div>
+          <div class="modal-footer">
+            <%= f.submit '送信', class: "btn btn-primary" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
-
-<div class="modal fade" id="select-template" tabindex="1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
-      </div>
-      <%= form_with url: new_board_offer_path(@board), local: true, method: :get do |f| %>
-      <div class="modal-body">
-        <p>テンプレートを選んでください。</p>
-        <%= collection_select(:template, :id, current_user.templates.all, :id, :title ) %>
-      </div>
-      <div class="modal-footer">
-        <%= f.submit '適用する', { class: 'btn btn-primary' }%>
-        <%= link_to 'テンプレートを使用しない', new_board_offer_path(@board), class: 'btn btn-primary' %>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+<% end %>
