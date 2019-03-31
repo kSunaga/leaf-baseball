@@ -1,0 +1,9 @@
+ja:
+  users:
+    common:
+      name: '名前'
+      email: 'Eメール'
+      password: 'パスワード'
+      confirm_password: '確認用パスワード'
+      current_password: '現在のパスワード'
+

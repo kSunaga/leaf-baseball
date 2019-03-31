@@ -1,31 +1,35 @@
 <div class="form">
   <ul>
     <li class="form-group">
-      <%= f.label :name %>
+      <%= f.label t 'boards.common.name' %>
       <%= f.text_field :name %>
     </li>
     <li class="form-group">
-      <%= f.label :place %>
+      <%= f.label t 'boards.common.place' %>
       <%= f.text_field :place %>
     </li>
     <li class="form-group">
-      <%= f.label :level %>
+      <%= f.label t 'boards.common.level' %>
       <%= f.text_field :level %>
     </li>
     <li class="form-group">
-      <%= f.label :game_date %>
-      <%= f.text_field :game_date %>
+      <%= f.label t 'boards.common.game_start_date' %>
+      <%= f.datetime_select :game_start_date, use_month_numbers: true, start_year: Time.now.year, end_year: Time.now.year + 1, minute_step: 15 %>
     </li>
     <li class="form-group">
-      <%= f.label :content %>
+      <%= f.label t 'boards.common.game_end_date' %>
+      <%= f.datetime_select :game_end_date, use_month_numbers: true, start_year: Time.now.year, end_year: Time.now.year + 1, minute_step: 15 %>
+    </li>
+    <li class="form-group">
+      <%= f.label t 'boards.common.content' %>
       <%= f.text_area :content %>
     </li>
     <li class="form-group">
-      <%= f.label :password %>
+      <%= f.label t 'boards.common.password' %>
       <%= f.password_field :password %>
     </li>
     <li class="form-group">
-      <%= f.label '確認用password' %>
+      <%= f.label t 'boards.common.confirm_password' %>
       <%= f.password_field :confirm_password %>
     </li>
     <%= link_to '戻る', :back, class: 'btn btn-primary' %>

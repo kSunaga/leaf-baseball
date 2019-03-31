@@ -1,16 +1,20 @@
 #top-page {
   margin-top: 5%;
   .board {
+    background-color: white;
     border: 1px solid lightgray;
-    height: 75px;
+    height: 100%;
     width: 70%;
-    margin: 1% auto;
-    line-height: 75px;
+    margin: 0 auto;
     .content {
-      .header {
-        height: 50%;
-        > ul > li {
-          display: inline;
+      width: 100%;
+      display: table;
+      .item {
+        display: table-cell;
+        text-align: center;
+        .head {
+          width: 100%;
+          background-color: lightgray;
         }
       }
     }

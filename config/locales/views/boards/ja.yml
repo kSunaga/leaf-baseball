@@ -1,0 +1,12 @@
+ja:
+  boards:
+    common:
+      name: '名前'
+      place: '試合会場'
+      game_start_date: '開始時刻'
+      game_end_date: '終了時刻'
+      content: '内容'
+      level: 'レベル'
+      password: 'パスワード'
+      confirm_password: '確認用パスワード'
+

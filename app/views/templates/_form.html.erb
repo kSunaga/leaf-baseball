@@ -1,19 +1,19 @@
 <div class="form">
   <ul>
     <li class="form-group">
-      <%= f.label :title %>
+      <%= f.label t 'templates.common.title' %>
       <%= f.text_field :title, {class: 'form-control'} %>
     </li>
     <li class="form-group">
-      <%= f.label :name %>
+      <%= f.label t 'templates.common.name' %>
       <%= f.text_field :name, {class: 'form-control'} %>
     </li>
     <li class="form-group">
-      <%= f.label :email %>
+      <%= f.label t 'templates.common.email' %>
       <%= f.email_field :email, {class: 'form-control'} %>
     </li>
     <li class="form-group">
-      <%= f.label :content %>
+      <%= f.label t 'templates.common.content' %>
       <%= f.text_field :content, {class: 'form-control'} %>
     </li>
     <%= link_to '戻る', :back, class: 'btn btn-primary' %>

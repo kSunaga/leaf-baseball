@@ -1,8 +1,10 @@
 <h1>テンプレート一覧</h1>
+
 <% @templates.each do |t| %>
-  <div class="card">
-    <span><%= t.title %></span>
-    <span><%= link_to '詳細', template_path(t), class: 'btn btn-primary pull-right' %></span>
-  </div>
+  <%= link_to template_path(t) do %>
+    <div class="card">
+      <span><%= t.title %></span>
+    </div>
+  <% end %>
 <% end %>
-<%= link_to 'テンプレート作成', new_template_path, class: 'btn btn-default' %>
+<%= link_to 'テンプレート新規作成', new_template_path, class: 'btn btn-default pull-right' %>

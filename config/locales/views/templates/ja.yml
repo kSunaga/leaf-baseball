@@ -1,0 +1,7 @@
+ja:
+  templates:
+    common:
+      title: 'タイトル'
+      name: '名前'
+      email: 'Eメール'
+      content: '内容'

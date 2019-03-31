@@ -16,6 +16,8 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'data-confirm-modal'
 gem 'devise'
+gem 'active_decorator'
+gem 'rails-i18n'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
