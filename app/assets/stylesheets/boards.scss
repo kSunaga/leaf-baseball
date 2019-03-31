@@ -1,5 +1,9 @@
 #top-page {
   margin-top: 5%;
+  .search-button {
+    text-align: center;
+    margin: 20px 0;
+  }
   .board {
     background-color: white;
     border: 1px solid lightgray;
@@ -21,6 +25,15 @@
   }
 }
 
+#search-modal {
+  border: 1px solid lightgray;
+  width: 70%;
+  margin: 15px auto;
+  .search-form {
+    padding: 5px 15px;
+    text-align: center;
+  }
+}
 #board-show {
   margin-top: 5%;
   .board {

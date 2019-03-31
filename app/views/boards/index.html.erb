@@ -1,7 +1,10 @@
 <h1>募集一覧</h1>
 
 <div id="top-page">
-  <% @boards.each do |b| %>
+  <div class="search-button">
+    <button class="btn btn-default" data-toggle="modal" data-target="#search-modal">検索する</button>
+  </div>
+  <% @result.each do |b| %>
     <div class="board">
       <%= link_to board_path(b) do %>
         <div class="content">
@@ -33,4 +36,37 @@
       <% end %>
     </div>
   <% end %>
+</div>
+
+<div class="modal fade" id="search-modal" tabindex="1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        検索フォーム
+      </div>
+      <%= search_form_for @q, url: boards_path do |f| %>
+        <div class="search">
+          <div class="search-form">
+            <p><%= f.label t ('boards.common.name') %></p>
+            <%= f.search_field :name_cont %>
+          </div>
+          <div class="search-form">
+            <p><%= f.label t ('boards.common.place') %></p>
+            <%= f.search_field :place_cont %>
+          </div>
+          <div class="search-form">
+            <p><%= f.label t ('boards.common.game_start_date') %></p>
+            <%= f.date_select :game_start_date_cont, start_year: Time.now.year, end_date: Time.now.year + 1 %>
+          </div>
+          <div class="search-form">
+            <p><%= f.label t ('boards.common.level') %></p>
+            <%= f.collection_select :level_cont, Level.all, :id, :number, include_blank: true %>
+          </div>
+          <div class="modal-footer">
+            <%= f.submit class: 'btn btn-primary'%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
