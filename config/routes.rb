@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
   resources :templates
   resources :levels, only: %i(index)
+  resources :teams
 end

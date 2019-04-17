@@ -53,6 +53,10 @@
           <div class="template-menu" style="display: none">
             <%= link_to 'テンプレート一覧', templates_path, { class: "btn btn-primary setting-button", style: 'width: 90%; float: right;' } %>
           </div>
+          <button class="btn btn-default setting-button" id="team-main">チーム設定</button>
+          <div class="team-menu" style="display: none">
+            <%= link_to '所属チーム一覧', teams_path, { class: "btn btn-primary setting-button", style: 'width: 90%; float: right;' } %>
+          </div>
         </div>
       <% end %>
     </div>

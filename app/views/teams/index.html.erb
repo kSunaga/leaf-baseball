@@ -1,0 +1,10 @@
+<h1>所属チーム一覧</h1>
+
+<% @teams.each do |t| %>
+  <%= link_to team_path(t) do %>
+    <div class="card">
+      <span><%= t.name %></span>
+    </div>
+  <% end %>
+<% end %>
+<%= link_to 'チーム新規作成', new_team_path, class: 'btn btn-default pull-right' %>
